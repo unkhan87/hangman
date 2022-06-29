@@ -51,4 +51,38 @@ def instructions():
             'enter 1 if not enter 2:/n'
         )
 
-welcome_msg()
+def get_word():
+    word = random.choice(word_list)
+    return word.upper()
+
+def play(word):
+    """
+    get random words from the words list, and ask the user to guess the words 
+    """
+    #Initialize variables
+    #blanks for each letter in the word
+    current_guess = "-" * len(word)
+    word_guessed = False
+    tries = 6
+    #used letters tracker
+    used_letters=[]
+    #Main Loop
+    print("Let's Play Hangman!")
+    print(display_hangman(tries))
+    print(current_guess)
+    while not word_guessed and tries > 0:
+        guess = input("Please guess a letter or a word: ").upper()
+        if len(guess) == 1 and guess.isalpha():
+            #checks if the letter the user has already been used
+            if guess in used_letters:
+                print("You already guessed that letter", guess)
+            #prints statement with a guess letter if it wrong
+            elif guess not in word:
+                print(guess, "is not in word, try again")
+                tries = 1
+                #Add new guessed letter to list of guessed letters
+                used_letters.append(guess)
+
+
+
+

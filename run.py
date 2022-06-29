@@ -2,6 +2,7 @@
 # You can delete these comments, but do not change the name of this file
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 import random
+from hangman_art import logo
 from words import words_list
 
 
@@ -9,6 +10,7 @@ def welcome_msg():
     """
     Welcome message for the user.
     """
+    print(logo)
     user_name = input('Please enter your name: \n')
     print(
         f'Hi {user_name}, Welcome to Hangman!\n'
@@ -60,7 +62,7 @@ def play(word):
     get random words from the words list, and ask the user to guess the words 
     """
     #Initialize variables
-    #blanks for each letter in the word
+    #Blanks for each letter in the word
     current_guess = "-" * len(word)
     word_guessed = False
     tries = 6
@@ -71,18 +73,25 @@ def play(word):
     print(display_hangman(tries))
     print(current_guess)
     while not word_guessed and tries > 0:
+        #Promt the user to enter the letter
         guess = input("Please guess a letter or a word: ").upper()
         if len(guess) == 1 and guess.isalpha():
-            #checks if the letter the user has already been used
+            #Checks if the letter the user has already been used
             if guess in used_letters:
                 print("You already guessed that letter", guess)
             #prints statement with a guess letter if it wrong
             elif guess not in word:
                 print(guess, "is not in word, try again")
-                tries = 1
+                tries -= 1
                 #Add new guessed letter to list of guessed letters
                 used_letters.append(guess)
-
+            #If user made a correct letter guess
+            else:
+                print("You have guessed the correct letter!", guess)
+                used_letters.append(guess)
+                
+                
+welcome_msg()
 
 
 

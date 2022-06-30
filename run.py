@@ -99,7 +99,6 @@ def play(word):
                         current_guess = current_guess + letter + " "
                     else:    
                         current_guess = current_guess + "_ "
-                    if 
 
         else:
             print("Invalid Input")
@@ -111,36 +110,36 @@ def play(word):
 
 def display_hangman(tries):
     stages = ['''
-    +---+
-    |   |
-    O   |
+     +---+
+     |   |
+     O   |
     /|\  |
     / \  |
-        |
+         |
     =========
     ''', '''
-    +---+
-    |   |
-    O   |
+     +---+
+     |   |
+     O   |
     /|\  |
     /    |
-        |
+         |
     =========
     ''', '''
-    +---+
-    |   |
-    O   |
+     +---+
+     |   |
+     O   |
     /|\  |
-        |
-        |
+         |
+         |
     =========
     ''', '''
-    +---+
-    |   |
-    O   |
+     +---+
+     |   |
+     O   |
     /|   |
-        |
-        |
+         |
+         |
     =========''', '''
     +---+
     |   |

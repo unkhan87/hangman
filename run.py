@@ -54,8 +54,9 @@ def instructions():
         )
 
 def get_word():
-    word = random.choice(word_list)
+    word = random.choice(words_list)
     return word.upper()
+    play(word)
 
 def play(word):
     """
@@ -90,8 +91,8 @@ def play(word):
                 print("You have guessed the correct letter!", guess)
                 used_letters.append(guess)
                 
-                
-welcome_msg()
+welcome_msg()           
+
 
 
 

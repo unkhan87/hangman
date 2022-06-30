@@ -104,7 +104,13 @@ def play(word):
             print("Invalid Input")
             continue
 
-
+    if tries == 0:
+        print(display_hangman(tries))
+        print("You are out of tries")
+        print("The word was", word,"!\n")
+    else:
+        print("Congratulations!\nYou "
+        "guessed the word", word,"! You Win!")
 
 
 

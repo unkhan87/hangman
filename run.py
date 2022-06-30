@@ -20,13 +20,13 @@ def welcome_msg():
         'Please type 1 to see the instructions, ' 'or 2 to start the the game!:\n' 
     )
     
-    #This is to make sure the input is valid
+    # This is to make sure the input is valid
     while view_instructions != "1" and view_instructions != "2":
         view_instructions = input(
             'Invalid input, Please type 1 to see the instructions or 2 to start the game'
         )
     
-    #Take user to choice they made on the first step
+    # Take user to choice they made on the first step
     if view_instructions == "1":
         instructions()
     else:
@@ -49,14 +49,15 @@ def instructions():
     #this is to check if user input invalid number
     while play != "1" and play != "2":
         play = input(
-            '/nInvalid Input, if you are ready to play '
-            'enter 1 if not enter 2:/n'
+            '\nInvalid Input, if you are ready to play '
+            'enter 1 if not enter 2:\n'
         )
+
+    get_word()
 
 def get_word():
     word = random.choice(words_list)
-    return word.upper()
-    play(word)
+    play(word.upper())
 
 def play(word):
     """
@@ -64,35 +65,111 @@ def play(word):
     """
     #Initialize variables
     #Blanks for each letter in the word
-    current_guess = "-" * len(word)
+    current_guess = "_ " * len(word)
     word_guessed = False
     tries = 6
     #used letters tracker
     used_letters=[]
     #Main Loop
     print("Let's Play Hangman!")
-    print(display_hangman(tries))
-    print(current_guess)
     while not word_guessed and tries > 0:
+        print(display_hangman(tries))
+        print(current_guess)
         #Promt the user to enter the letter
-        guess = input("Please guess a letter or a word: ").upper()
+        guess = input("Please guess a letter: ").upper()
         if len(guess) == 1 and guess.isalpha():
             #Checks if the letter the user has already been used
             if guess in used_letters:
                 print("You already guessed that letter", guess)
+                continue
             #prints statement with a guess letter if it wrong
             elif guess not in word:
                 print(guess, "is not in word, try again")
                 tries -= 1
                 #Add new guessed letter to list of guessed letters
                 used_letters.append(guess)
+                continue
             #If user made a correct letter guess
             else:
                 print("You have guessed the correct letter!", guess)
                 used_letters.append(guess)
-                
-welcome_msg()           
+                current_guess = " "
+                for letter in word:
+                    if letter in used_letters:
+                        current_guess = current_guess + letter + " "
+                    else:    
+                        current_guess = current_guess + "_ "
+                    if 
 
+        else:
+            print("Invalid Input")
+            continue
+
+
+
+
+
+def display_hangman(tries):
+    stages = ['''
+    +---+
+    |   |
+    O   |
+    /|\  |
+    / \  |
+        |
+    =========
+    ''', '''
+    +---+
+    |   |
+    O   |
+    /|\  |
+    /    |
+        |
+    =========
+    ''', '''
+    +---+
+    |   |
+    O   |
+    /|\  |
+        |
+        |
+    =========
+    ''', '''
+    +---+
+    |   |
+    O   |
+    /|   |
+        |
+        |
+    =========''', '''
+    +---+
+    |   |
+    O   |
+    |   |
+        |
+        |
+    =========
+    ''', '''
+    +---+
+    |   |
+    O   |
+        |
+        |
+        |
+    =========
+    ''', '''
+    +---+
+    |   |
+        |
+        |
+        |
+        |
+    =========
+    ''']
+    return stages[tries]
+        
+
+welcome_msg()
 
 
 

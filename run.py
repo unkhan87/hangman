@@ -108,11 +108,32 @@ def play(word):
         print(display_hangman(tries))
         print("You are out of tries")
         print("The word was", word,"!\n")
+        play_again()
     else:
         print("Congratulations!\nYou "
         "guessed the word", word,"! You Win!")
+        play_again()
 
 
+def play_again():
+    """
+    Ask user if they like to play the game again
+    """
+    play_again_option = input("Would you like to play the game again? \n"
+    "Type 1 for Yes or 2 for No:\n")
+
+    # Making sure the user input is valid
+    while play_again_option != "1" and play_again_option != "2":
+        play_again_option = input("Invalid Input!\n"
+        "Please press 1 to play again and if not please press 2: \n")
+
+    # Take user to the relevant section of the game
+    if play_again_option == "1":
+        get_word()
+    else:
+        print("Thanks for playing Hangman. I hope you enjoyed it, Goodbye\n")
+        print("If you like to play again, refresh the page by clicking "
+        "'run program option' at the top." )
 
 def display_hangman(tries):
     stages = ['''

@@ -37,16 +37,16 @@ def instructions():
     Show instructions to the user and confirm if the user is ready to play
     """
     print(
-        'Instructions:\n\n To play hangman you will need to guess your word letter by letter.\n\n1. Start guessing'
-        'the letter and hit enter.\n2. If your letter is correct it one of the blank space will get populated.\n3. If'
-        'you gussed an incorrect letter you will get a strike and a section of a hangman will appear.\n4. You have got'
+        'Instructions:\n\n To play hangman you will need to guess your word letter by letter.\n\n1. Start guessing '
+        'the letter and hit enter.\n2. If your letter is correct one of the blank space will get populated.\n3. If '
+        'you gussed an incorrect letter you will get a strike and a section of a hangman will appear.\n4. You have got '
         '6 tries to guess the word.\n'
     )
 
-    #Confirm if the user is ready to play the game
+    # Confirm if the user is ready to play the game
     print("Are you ready to play Hangman?")
     play = input('Please type 1 for yes and 2 for no:\n')
-    #this is to check if user input invalid number
+    # this is to check if user input invalid number
     while play != "1" and play != "2":
         play = input(
             '\nInvalid Input, if you are ready to play '
@@ -63,33 +63,33 @@ def play(word):
     """
     get random words from the words list, and ask the user to guess the words 
     """
-    #Initialize variables
-    #Blanks for each letter in the word
+    # Initialize variables
+    # Blanks for each letter in the word
     current_guess = "_ " * len(word)
     word_guessed = False
     tries = 6
-    #used letters tracker
+    # used letters tracker
     used_letters=[]
-    #Main Loop
+    # Main Loop
     print("Let's Play Hangman!")
     while not word_guessed and tries > 0:
         print(display_hangman(tries))
         print(current_guess)
-        #Promt the user to enter the letter
+        # Promt the user to enter the letter
         guess = input("Please guess a letter: ").upper()
         if len(guess) == 1 and guess.isalpha():
-            #Checks if the letter the user has already been used
+            # Checks if the letter the user has already been used
             if guess in used_letters:
                 print("You already guessed that letter", guess)
                 continue
-            #prints statement with a guess letter if it wrong
+            # prints statement with a guess letter if it wrong
             elif guess not in word:
                 print(guess, "is not in word, try again")
                 tries -= 1
-                #Add new guessed letter to list of guessed letters
+                # Add new guessed letter to list of guessed letters
                 used_letters.append(guess)
                 continue
-            #If user made a correct letter guess
+            # If user made a correct letter guess
             else:
                 print("You have guessed the correct letter!", guess)
                 used_letters.append(guess)

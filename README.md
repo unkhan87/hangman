@@ -20,16 +20,64 @@ In this version of Hangman the system generates a random word and display it to 
     - Was this achieved?
         - Yes
     - How was this achieved?
-        - The game give users the option if they like play again or if they would like to quit. Again option 1 for 'Yes' and option 2 for 'No'.
+        - When the game ends the user is presented with an option if they like play again or if they would like to quit. Again option 1 for 'Yes' and option 2 for 'No'.
 
-- To make it clear to the user how many tries they have left until the game is over.
+- Does it make it clear to the user how many tries they have left.
     - Was this achieved?
         - Yes
     - How was this achieved?
-        - When the user gets a guess wrong the number of tries left is printed and each round if they get the answer right or wrong it will print out the traditional hangman image that shows how many tries the user has left in the game.
+        - When the user gets a guess wrong it will print out a section of the hangman image that shows how many tries the user has left in the game.
 
-- I want to give the user a choice of how hard they would like to challenge themselves.
-    - Was this achieved?
-        - Yes
-    - How was this achieved?
-        - To achieve this I created two lists, one with shorter words making them easier to guess and one with longer words making them a bit harder to guess. I then made a function called get_word, within this function I asked the user what level they would like to play at. If they chose easy it would generate a word from the easier list if they chose hard it would generate a word from the harder list.
+## Changes throughout the process
+
+The initial thought process was to create a list of words within one file and use the while loop to get the words from the list however this was aboloshed after the code was looking over-populated and after watching several youtube videos and going through alot of blogs I found out a way to create new file and import the words from the words file to the main run.py file.
+
+Initial idea was to give display 6 lives on the user screen and then to decrement it if the user get the letter wrong. However, then this would have never been a traditional hangman and then I decided to implement a hangman image in my code.
+
+ASCII art was never in my initial plan however then I learned how easy it was to implement ASCII art in the python code.
+
+## Features
+
+### Welcome Page
+- This is the first page user see when the app loads. The welcome page includes ASCII art and asks user for their name and then it greets the user followed by the users name. And then it give users the option to either see instructions or to play the game.
+
+### Instructions
+- This section give users the instructions regarding how to play the game. And introduce the user with a guidance on how to play the game.
+
+### Game
+- When the user starts the game, it shows the user the length of the word and display gallows. It request the user to guess the their first letter.
+
+- While the user is playing the game the program also displays the letters the users have used and if the user insert any used letter it gives them a message that the letter has already been used.
+
+- The program also displays that if the user has guessed the letter correctly shows a message to the user that the guessed word is correct and accordingly if the user has guessed it wrong the program will accordingly show them the message followed by the wrongly guessed letter.
+
+### Loosing Message
+If the user loose the game they will get an option if they want to play again or not. Option 1 for 'Yes' and Option 2 for 'No'.
+
+### Winning Message
+Currently there's a bug in displaying this message. If the user guess the word correctly it does not give end the game and asks user to keep gussing.
+
+## Testing
+
+
+### Manual Testing
+- Testing started from the welcome message. The input and greeting was tested to check if its functioning properly and if the user is getting the result as expected.
+
+- Where the program asks for an input from the user like Option 1 for 'Yes' or Option 2 for 'No' I tested what would happen if the user inserted an invalid key and hence with the help of while loop I've managed to add a condition where the user input any invalid character the program throws the user an error message saying invalid input and request to either input 1 or 2.
+
+- Next I tested if the game starts if the user does not want to view the instructions. And it does.
+
+- I also tested if the user wants to see the instructions and if the results were as expected. 
+
+- On to the actual game I tested if the program is only taking alphabets and is not accepting any invalid characters.
+
+- If used letter option is getting displayed to the user.
+
+- Already gussed letter functionality is working and it is.
+
+- The messages for the correct and incorrect guess is showing followed by the guessed letter.
+
+-  And if the game ending messages are shwoing correctly and when the game ends if the user is prompted with a play again option.
+
+- Tested if the hangman image is working as its suppose to like displaying a section of the hangman image if the user gets the letter wrong and vice versa.
+

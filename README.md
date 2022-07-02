@@ -41,18 +41,39 @@ ASCII art was never in my initial plan however then I learned how easy it was to
 ### Welcome Page
 - This is the first page user see when the app loads. The welcome page includes ASCII art and asks user for their name and then it greets the user followed by the users name. And then it give users the option to either see instructions or to play the game.
 
+<img src="images/hangman_welcome.png" alt="Welcome">
+
+<img src="images/hangman_welcome_greet.png" alt="Greetings">
+
 ### Instructions
 - This section give users the instructions regarding how to play the game. And introduce the user with a guidance on how to play the game.
+
+<img src="images/instructions_hangman.png" alt="Instructions">
 
 ### Game
 - When the user starts the game, it shows the user the length of the word and display gallows. It request the user to guess the their first letter.
 
+<img src="images/start_hangman.png" alt="Start Game">
+
 - While the user is playing the game the program also displays the letters the users have used and if the user insert any used letter it gives them a message that the letter has already been used.
+
+<img src="images/start_duplicate_guess.png" alt="Already Used Letter">
 
 - The program also displays that if the user has guessed the letter correctly shows a message to the user that the guessed word is correct and accordingly if the user has guessed it wrong the program will accordingly show them the message followed by the wrongly guessed letter.
 
+<img src="images/hangman_correct_guess.png" alt="Correct Guess">
+
+<img src="images/hangman_wrong_guess.png" alt="Incorrect Guess">
+
 ### Loosing Message
 - If the user loose the game they will get an option if they want to play again or not. Option 1 for 'Yes' and Option 2 for 'No'.
+
+<img src="images/hangman_out_of_tries.png" alt="Out of tries">
+
+### End Message
+- If the user chooses not to play again they will get a goodbye message.
+
+<img src="images/hangman_end_message.png" alt="Goodbye Message">
 
 ### Winning Message
 - Currently there's a bug in displaying this message. If the user guess the word correctly it does not give end the game and asks user to keep gussing.
@@ -107,7 +128,18 @@ The python results came with the following:
 ### Remaining Bugs
 - When the user guess the word correctly with lives remaining the game doesn't end and ask user to keep guessing until the hangman image fully gets completed in other words when the user is out of tries.
 
+## Deployment
 
+1. I went over to my Heroku dashboard and clicked on 'create a new app'.
+2. I chose a name for my app; every app must have a unique name so I couldn't call it hangman as this was already taken so I went for uk_hangman.
+3. Selected my region and clicked create app. 
+4. I then went to the tab at the top of the page and clicked on settings. 
+6. I added two (python & node.js) making sure they are in the correct order.
+7. I scrolled back up to the tab at the top and clicked deploy.
+8. I selected github as the deployment method and clicked connect to github.
+9. Once this is selected, I then searched for my github repository name, and connected to the correct repository.
+10. Then I scrolled down, and choose to manually deploy my repository from Github.
+10. Once the build was completed I clicked on the view button to check if the app is running as expected and played the game to test if its working.
 
 ## Credits
 

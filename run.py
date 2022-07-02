@@ -23,7 +23,7 @@ def welcome_msg():
     while view_instructions != "1" and view_instructions != "2":
         view_instructions = input(
             'Invalid input, Please type 1 to see the'
-            'instructions or 2 to start the game'
+            'instructions or 2 to start the game:\n'
             )
     # Take user to choice they made on the first step
     if view_instructions == "1":
@@ -83,7 +83,7 @@ def play(word):
         print(display_hangman(tries))
         print(current_guess)
         # Promt the user to enter the letter
-        guess = input("Please guess a letter: ").upper()
+        guess = input("Please guess a letter: \n").upper()
         if len(guess) == 1 and guess.isalpha():
             # Checks if the letter the user has already been used
             if guess in used_letters:

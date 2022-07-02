@@ -52,10 +52,13 @@ ASCII art was never in my initial plan however then I learned how easy it was to
 - The program also displays that if the user has guessed the letter correctly shows a message to the user that the guessed word is correct and accordingly if the user has guessed it wrong the program will accordingly show them the message followed by the wrongly guessed letter.
 
 ### Loosing Message
-If the user loose the game they will get an option if they want to play again or not. Option 1 for 'Yes' and Option 2 for 'No'.
+- If the user loose the game they will get an option if they want to play again or not. Option 1 for 'Yes' and Option 2 for 'No'.
 
 ### Winning Message
-Currently there's a bug in displaying this message. If the user guess the word correctly it does not give end the game and asks user to keep gussing.
+- Currently there's a bug in displaying this message. If the user guess the word correctly it does not give end the game and asks user to keep gussing.
+
+### Future Features
+- For future development I would like to give the user more options like different levels of difficulty and introduce the option of different languages as well.
 
 ## Testing
 
@@ -79,5 +82,10 @@ Currently there's a bug in displaying this message. If the user guess the word c
 
 -  And if the game ending messages are shwoing correctly and when the game ends if the user is prompted with a play again option.
 
-- Tested if the hangman image is working as its suppose to like displaying a section of the hangman image if the user gets the letter wrong and vice versa.
+- Tested if the hangman image is working as its suppose to like displaying a section of the hangman image if the user gets the letter wrong and if the user gets it right nothing happens to the image.
+
+## Bugs
+
+### Remaining Bugs
+- When the user guess the word correctly with lived remaining the game doesn't end and ask user to keep guessing until the hangman image fully gets completed in other words when the user is out of tries.
 

@@ -11,7 +11,9 @@ def welcome_msg():
     Welcome message for the user.
     """
     print(logo)
+    print('\n')
     user_name = input('Please enter your name: \n')
+    print('\n')
     print(
         f'Hi {user_name}, Welcome to Hangman!\n'
     )
@@ -53,7 +55,10 @@ def instructions():
             '\nInvalid Input, if you are ready to play '
             'enter 1 if not enter 2:\n'
         )
-    get_word()
+    if play == "1":
+        get_word()
+    else:
+        welcome_msg()
 
 
 def get_word():

@@ -4,6 +4,8 @@ Hangman is a guessing game and is usually played by two or more people, where on
 The game is usually played with a Paper-and-pencil however I decided to create electronic version of the game that you can play against the computer rather than playing against another person.
 I've used python programming language to program this game. Number of different functions have been created in order to achieve different tasks for this game.
 
+[Click here to go to the live website!](https://uk-hangman.herokuapp.com/)
+
 ## How To Play
 
 In this version of Hangman the system generates a random word and display it to the user however instead of words blank lines get displayed on the users screen. Users have got six attempts to guess if they cannot do it in the given attempts they lose and get asked to if the user wants to play again however if they do guess a word then they win the game.
@@ -57,7 +59,7 @@ ASCII art was never in my initial plan however then I learned how easy it was to
 
 - While the user is playing the game the program also displays the letters the users have used and if the user insert any used letter it gives them a message that the letter has already been used.
 
-<img src="images/start_duplicate_guess.png" alt="Already Used Letter">
+<img src="images/hangman_duplicate_guess.png" alt="Already Used Letter">
 
 - The program also displays that if the user has guessed the letter correctly shows a message to the user that the guessed word is correct and accordingly if the user has guessed it wrong the program will accordingly show them the message followed by the wrongly guessed letter.
 
@@ -76,10 +78,12 @@ ASCII art was never in my initial plan however then I learned how easy it was to
 <img src="images/hangman_end_message.png" alt="Goodbye Message">
 
 ### Winning Message
-- Currently there's a bug in displaying this message. If the user guess the word correctly it does not give end the game and asks user to keep gussing.
+- Currently there's a bug in displaying this message. If the user guess the word correctly it does not give end the game and asks user to keep guessing. I tried to implement different solutions however I end up creating errors on the while loop.
 
 ### Future Features
 - For future development I would like to give the user more options like different levels of difficulty and introduce the option of different languages as well.
+
+- Find a way to resolve the bug without effecting the while loop.
 
 ## Testing
 
@@ -106,6 +110,8 @@ The python results came with the following:
 - Testing started from the welcome message. The input and greeting was tested to check if its functioning properly and if the user is getting the result as expected.
 
 - Where the program asks for an input from the user like Option 1 for 'Yes' or Option 2 for 'No' I tested what would happen if the user inserted an invalid key and hence with the help of while loop I've managed to add a condition where the user input any invalid character the program throws the user an error message saying invalid input and request to either input 1 or 2.
+
+<img src="images/welcome_invalid_input.png" alt="Invalid input for the welcome page">
 
 - Next I tested if the game starts if the user does not want to view the instructions. And it does.
 
@@ -149,6 +155,8 @@ The python results came with the following:
                       [Tutorial by Kite] (https://www.youtube.com/watch?v=m4nEnsavl6w&t=406s)
 
 - Hangman Image - https://inventwithpython.com/invent4thed/chapter8.html
+
+- [Google developer docs for python](https://developers.google.com/edu/python) - helped me with the while and for loops and functions. 
 
 - Marcel - My mentor helped was very helpful throughout the process helping me with the code and giving me ideas how to structure my game.
 

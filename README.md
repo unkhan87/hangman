@@ -62,6 +62,24 @@ ASCII art was never in my initial plan however then I learned how easy it was to
 
 ## Testing
 
+### Python
+I used PEP8 validator to test my code.
+
+The python results came with the following:
+
+<img src="images/pep8_list_of_errors.png" alt="Initial PEP8 Results">
+
+- Trailing white space erros were fixed by removing the space from the last character.
+
+- Continuation line under-indented for visual indent was resolved by indenting the first line to the opening parenthses.
+
+- line too long errors was mainly in the input section and the instructions section of the code to fix this issues I edited the long lines and made them into multiple shorter lines.
+
+- Whitespace errors were removed by deleting the whitespace from my code.
+
+- Please see the results below after the errors were fixed.
+
+<img src="images/pep8_result.png" alt="Results after the issues were resolved">
 
 ### Manual Testing
 - Testing started from the welcome message. The input and greeting was tested to check if its functioning properly and if the user is getting the result as expected.
@@ -87,5 +105,18 @@ ASCII art was never in my initial plan however then I learned how easy it was to
 ## Bugs
 
 ### Remaining Bugs
-- When the user guess the word correctly with lived remaining the game doesn't end and ask user to keep guessing until the hangman image fully gets completed in other words when the user is out of tries.
+- When the user guess the word correctly with lives remaining the game doesn't end and ask user to keep guessing until the hangman image fully gets completed in other words when the user is out of tries.
+
+
+
+## Credits
+
+- [PEP8 Validator](http://pep8online.com/) - was used to check the code was valid.
+
+- Youtube tutorials - [Hangman Tutorial by Kylie Ying] (https://www.youtube.com/watch?v=cJJTnI22IF8)
+                      [Tutorial by Kite] (https://www.youtube.com/watch?v=m4nEnsavl6w&t=406s)
+
+- Hangman Image - https://inventwithpython.com/invent4thed/chapter8.html
+
+- Marcel - My mentor helped was very helpful throughout the process helping me with the code and giving me ideas how to structure my game.
 
